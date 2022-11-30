@@ -1,7 +1,7 @@
-require("dotenv").config();
-const { Sequelize } = require("sequelize");
-const fs = require("fs");
-const path = require("path");
+require('dotenv').config();
+const { Sequelize } = require('sequelize');
+const fs = require('fs');
+const path = require('path');
 // const Country = require("./models/Country");
 // const Activity = require("./models/Activity");
 
@@ -19,13 +19,13 @@ const basename = path.basename(__filename);
 const modelDefiners = [];
 
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
-fs.readdirSync(path.join(__dirname, "/models"))
+fs.readdirSync(path.join(__dirname, '/models'))
   .filter(
     (file) =>
-      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+      file.indexOf('.') !== 0 && file !== basename && file.slice(-3) === '.js'
   )
   .forEach((file) => {
-    modelDefiners.push(require(path.join(__dirname, "/models", file)));
+    modelDefiners.push(require(path.join(__dirname, '/models', file)));
   });
 
 // Injectamos la conexion (sequelize) a todos los modelos
@@ -46,8 +46,8 @@ const { Country, Activity } = sequelize.models;
 // Product.hasMany(Reviews);
 // Dos tablas que tienen una relación Muchos a Muchos requieren una tercera tabla que actúa como unión o tabla de combinación.
 
-Country.belongsToMany(Activity, { through: "country_activity" });
-Activity.belongsToMany(Country, { through: "country_activity" });
+Country.belongsToMany(Activity, { through: 'country_activity' });
+Activity.belongsToMany(Country, { through: 'country_activity' });
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

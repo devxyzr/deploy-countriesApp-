@@ -17,7 +17,7 @@ export const POPULATION_ORDER_DESC = 'POPULATION_ORDER_DESC';
 export function getCountries() {
   return async (dispatch) => {
     try {
-      let response = await axios.get('http://localhost:3001/countries');
+      let response = await axios.get('/countries');
       return dispatch({
         type: GET_COUNTRIES,
         payload: response.data,
@@ -30,7 +30,7 @@ export function getCountries() {
 
 export function getDetailCountry(id) {
   return async (dispatch) => {
-    let response = await axios.get(`http://localhost:3001/countries/${id}`);
+    let response = await axios.get(`/countries/${id}`);
     return dispatch({ type: GET_DETAIL_COUNTRIES, payload: response.data });
   };
 }
@@ -38,9 +38,7 @@ export function getDetailCountry(id) {
 export function getCountryName(name) {
   return async (dispatch) => {
     try {
-      let response = await axios.get(
-        `http://localhost:3001/countries?name=${name}`
-      );
+      let response = await axios.get(`/countries?name=${name}`);
       return dispatch({
         type: GET_COUNTRY_NAME,
         payload: response.data,
@@ -55,7 +53,7 @@ export const createActivity = (values) => {
   return async function (dispatch) {
     try {
       console.log(values);
-      await axios.post('http://localhost:3001/activities', values);
+      await axios.post('/activities', values);
       // return dispatch({ type: CREATE_ACTIVITY, payload: body });
     } catch (error) {
       console.log(error);
@@ -65,14 +63,14 @@ export const createActivity = (values) => {
 
 export const deleteActivity = (id) => {
   return async function (dispatch) {
-    await axios.delete('http://localhost:3001/activities', { data: { id } });
+    await axios.delete('/activities', { data: { id } });
     return dispatch({ type: DELETE_ACTIVITY, payload: id });
   };
 };
 
 export const getAllActivities = () => {
   return async function (dispatch) {
-    let response = await axios.get('http://localhost:3001/activities');
+    let response = await axios.get('/activities');
     return dispatch({ type: GET_ALL_ACTIVITIES, payload: response.data });
   };
 };

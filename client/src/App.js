@@ -8,6 +8,9 @@ import CountryDetail from './components/CountryDetail/CountryDetail';
 import CreateActivityComponent from './components/CreateActivity/CreateActivity';
 import Activities from './components/Actitvities/Activities';
 
+import axios from 'axios';
+axios.defaults.baseURL = 'http://localhost:3001/';
+
 function App() {
   return (
     <BrowserRouter>
