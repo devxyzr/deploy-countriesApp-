@@ -1,0 +1,91 @@
+.container {
+    display: flex;
+    width: 100% ;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+
+  .card {
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 300px;
+  }
+
+  .headerImage {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .cardBody {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    padding-top: 0.8rem;
+    min-height: 100px;
+  }
+
+.countryName {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: black;
+}
+
+.continentName {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: black;
+    text-align: left;
+}
+
+.continentImage {
+   width: 100%;
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+   align-items: center;
+}
+
+.populationInfo {
+   
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-weight: 400;
+}
+
+.populationInfo p{
+    font-weight: 800;
+    padding-left: 0.3rem;
+    padding-right: 0.8rem;
+}
+
+.buttonCard {
+    padding-top: 0.8rem;
+}
+
+
+.buttonDetail {
+    font-weight: 600 ;
+    font-size:  1.2rem;
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 0.8rem; 
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
