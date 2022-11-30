@@ -9,7 +9,8 @@ import CreateActivityComponent from './components/CreateActivity/CreateActivity'
 import Activities from './components/Actitvities/Activities';
 
 import axios from 'axios';
-axios.defaults.baseURL = 'http://localhost:3001/';
+axios.defaults.baseURL =
+  'https://deploy-countriesapp-production.up.railway.app/';
 
 function App() {
   return (
